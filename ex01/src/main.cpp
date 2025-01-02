@@ -1,25 +1,27 @@
 #include "Bureaucrat.hpp"
-#include <iostream>
+#include "Form.hpp"
 
 int main() {
     try {
-        Bureaucrat normal("Normal", 75);
-        std::cout << normal << std::endl;
+        Bureaucrat bureaucrat("John", 50);
+        Form form("Tax Form", 75, 100);
+        
+        std::cout << bureaucrat << std::endl;
+        std::cout << form << std::endl;
+        
+        bureaucrat.signForm(form);
+        std::cout << form << std::endl;
 
-        normal.incrementGrade();
-        std::cout << "After increment: " << normal << std::endl;
+        Form highForm("High Level Form", 25, 30);
+        bureaucrat.signForm(highForm);
 
-        normal.decrementGrade();
-        std::cout << "After decrement: " << normal << std::endl;
-
-        Bureaucrat tooHigh{"TooHigh", 0};
-    } catch (const std::exception& e) {
+    } catch (std::exception& e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat tooLow{"TooLow", 151};
-    } catch (const std::exception& e) {
+        Form invalidForm("Invalid", 151, 100);
+    } catch (std::exception& e) {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 

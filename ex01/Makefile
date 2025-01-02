@@ -4,7 +4,7 @@ CPPFLAGS = -std=c++17 -Wall -Wextra -Werror
 SRC_DIR = src
 OBJ_DIR = build
 INCLUDE_DIR = include
-SRC_FILES = $(SRC_DIR)/main.cpp $(SRC_DIR)/Bureaucrat.cpp
+SRC_FILES = $(SRC_DIR)/main.cpp $(SRC_DIR)/Bureaucrat.cpp $(SRC_DIR)/Form.cpp
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SRC_FILES))
 
 all: $(NAME)
