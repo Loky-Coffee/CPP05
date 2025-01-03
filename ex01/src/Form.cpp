@@ -59,11 +59,11 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
     _isSigned = true;
 }
 
-const char* Form::GradeTooHighException::what() const throw() {
+const char* Form::GradeTooHighException::what() const noexcept {
     return "Grade is too high!";
 }
 
-const char* Form::GradeTooLowException::what() const throw() {
+const char* Form::GradeTooLowException::what() const noexcept {
     return "Grade is too low!";
 }
 
